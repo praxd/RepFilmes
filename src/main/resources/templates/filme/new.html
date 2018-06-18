@@ -1,0 +1,61 @@
+{{>layout/header}}
+
+  <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+    <h1 class="h2">Adicionar Filme</h1>
+    <div class="btn-toolbar mb-2 mb-md-0">
+      <div class="btn-group mr-2">
+        <!--button class="btn btn-sm btn-outline-secondary">Salvar</button-->
+      </div>
+    </div>
+  </div>
+
+<div class="row">
+
+<div class="col-md-4 col-sm-4">
+
+<div class="box box-primary">
+
+
+<!-- /.box-header -->
+
+<div class="box-body">
+
+{{#filme}}
+<form action="/filme/" method="POST">
+  <div class="form-group">
+    <label for="titulo">Titulo</label>
+	<input type="text" class="form-control" name="titulo" value="{{titulo}}" placeholder="Titulo">
+  </div>
+  <div class="form-group">
+    <label for="titulo">Sinopse</label>
+	<input type="text" class="form-control" name="sinopse" value="{{sinopse}}" placeholder="Sinopse">
+  </div>
+  
+  <div class="form-group">
+    <label for="titulo">Ano</label>
+	<input type="text" class="form-control" name="ano" value="{{ano}}" placeholder="Ano">
+  </div>
+  
+  <div class="form-group">
+    <label for="genero">Genero</label>
+	<select class="form-control" name="genero">
+		{{#generos}}
+		<option value="{{id}}">
+			{{name}}
+		</option>
+		{{/generos}}
+	</select>	
+  </div>
+  <button type="submit" class="btn btn-primary">Salvar</button>
+</form>
+{{/filme}}
+
+</div> <!--div class="box-body"-->
+
+</div> <!--div class="box box-default"-->
+
+</div> <!--div class="col-xs-4"-->
+
+</div> <!--div class="row"-->
+
+{{>layout/footer}}
